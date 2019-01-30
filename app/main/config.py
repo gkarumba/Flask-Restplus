@@ -6,7 +6,7 @@ class Config:
     SECRET_KEY = os.getenv('SECRET_KEY','expendables_theme_song')
     DEBUG = False
 
-class DeveleopmentConfig(Config):
+class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir,'flask_main.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -22,7 +22,7 @@ class ProductionConfig(Config):
     DEBUG = False
 
 config_by_name = dict(
-    dev=DeveleopmentConfig,
+    dev=DevelopmentConfig,
     test=TestingConfig,
     prod=ProductionConfig
 )
